@@ -12,6 +12,11 @@ Note: This only works for desktop browser only
 4. open [chartink scans](https://chartink.com/scan_dashboard) and after it loads click the bookmark created in step 2
 5. now when you backtest i.e. click on any stock it will direclty open it in tradingview
 
+![image](https://user-images.githubusercontent.com/20402232/136047373-0d66084b-1165-40d8-b226-54cdbd3241a8.png)
+
+
+
+
 Enjoy !!
 
 
