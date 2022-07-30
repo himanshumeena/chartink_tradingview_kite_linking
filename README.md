@@ -30,7 +30,7 @@ Note: This only works for desktop browser and only with [chartink](https://chart
 
 3. Now once the tradingview page loads with date in the url click on the bookmart you just created it will automatically set the date to the date in the chartink backtest page date
 
-Note: you need to open the tradingview page using the chartink bookmart we created earlier in step 1 for this bookmark to work since it needs date in the url 
+Note: you need to open the tradingview page using the chartink bookmark we created earlier in step 1 for this bookmark to work since it needs date in the url 
 
 
 Enjoy !!
