@@ -6,7 +6,7 @@ javascript: (function () {
     $("div[data-name='go-to-date']")[0].click();
     setTimeout(() => {
       $("button[data-name='submit-button']")[0].click();
-    }, 500);
+    }, 100);
     
   } catch (err) {
     console.log("oopss....", err);
