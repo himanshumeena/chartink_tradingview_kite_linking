@@ -7,7 +7,7 @@ javascript: (function () {
     const callback = function (mutationsList, observer) {
       setTimeout(function(){
         console.log(`mutationsList`, mutationsList);
-        const date = $("#backtest-table-data>tbody>tr:first-child>td:last-child").text();
+        const date = $("#backtest-table-data>tbody>tr:first-child>td:last-child").text().split(" ")[0];
         console.log('date.........', date);
 
         if (
