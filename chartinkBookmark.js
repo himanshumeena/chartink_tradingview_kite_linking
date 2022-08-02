@@ -7,8 +7,12 @@ javascript: (function () {
     const callback = function (mutationsList, observer) {
       setTimeout(function(){
         console.log(`mutationsList`, mutationsList);
-        const date = $("#backtest-table-data>tbody>tr:first-child>td:last-child").text().split(" ")[0];
+        const dateTimeData = $("#backtest-table-data>tbody>tr:first-child>td:last-child").text().split(" ");
+        const date = dateTimeData[0];
         console.log('date.........', date);
+        
+        const time = dateTimeData[1];
+        
 
         if (
           mutationsList.length &&
@@ -19,7 +23,7 @@ javascript: (function () {
           for (let link of links) {
             link.setAttribute(
               "href",
-              `https://in.tradingview.com/chart/?symbol=${link.innerHTML}&date=${date}`
+              `https://in.tradingview.com/chart/?symbol=${link.innerHTML}&date=${date}&time=${time}`
             );
           }
         }
