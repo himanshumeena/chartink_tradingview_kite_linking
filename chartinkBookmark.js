@@ -11,8 +11,10 @@ javascript: (function () {
         const date = dateTimeData[0];
         console.log('date.........', date);
         
-        const time = dateTimeData[1];
-        
+        let time;
+        if(dateTimeData[1]){
+          time = dateTimeData[1].split(":").join("_");
+        }
 
         if (
           mutationsList.length &&
