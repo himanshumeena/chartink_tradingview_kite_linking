@@ -74,6 +74,17 @@ javascript: (function () {
                 var parser = new DOMParser();
                 dom = parser.parseFromString(res2, "text/html");
 
+                if(!dom.getElementById("mainContent_ltrlOverAllRating")){
+                    return {
+                        symbolName,
+                        overallRating:"NA",
+                        Ownership:"NA",
+                        Valuation:"NA",
+                        Efficiency:"NA",
+                        Financials:"NA"
+                        };
+                }
+
                 const overallRating = dom.getElementById("mainContent_ltrlOverAllRating").getAttribute("style").split(":")[1].split(";")[0];
                 const Ownership = dom.getElementById("mainContent_ManagementRating").getAttribute("style").split(":")[1].split(";")[0];
                 const Valuation = dom.getElementById("mainContent_ValuationRating").getAttribute("style").split(":")[1].split(";")[0];
@@ -118,13 +129,14 @@ javascript: (function () {
                         }
                         console.log("symbols", symbols);
 
-                        const ratings = [];
+                        let ratings = [];
+                        const promises = [];
 
                         for (symbol of symbols) {
-                            const rating = await fetchFinlogyData(symbol);
-                            ratings.push(rating);
+                            promises.push(fetchFinlogyData(symbol));
                         }
-                        console.log("ratings", ratings);
+
+                        ratings =  await Promise.all(promises);
                         updateTableCells(ratings);
                     }
                 }, 500);
